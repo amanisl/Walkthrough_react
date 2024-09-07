@@ -1,0 +1,19 @@
+TASK 3
+Problem Statement
+Explain the difference between npm and npx using the create-react-app code example.
+
+
+Ans. npm and npx are both tools that come with Node.js, but they serve different purposes.
+
+npm (Node Package Manager) is used to install packages and manage dependencies.
+If you want to create a React app using npm, you first have to install create-react-app globally,
+then run the command:
+Example: npm install -g create-react-app
+create-react-app my-app
+
+* npx (Node Package Executor), on the other hand, allows you to run commands without needing to install them globally.
+It fetches and runs the package directly. You can create a React app in one step without globally installing create-react-app:
+
+--->>>Key Difference:<<<<---
+npm requires globally installing the package first.
+npx runs the package without installation, making it easier and cleaner for one-time usage.

@@ -1,0 +1,56 @@
+Q. Problem 2
+
+Explain the key differences and use cases between React's Client-Side Rendering (CSR) and Server-Side
+Rendering (SSR). Provide examples of scenarios where each approach is advantageous, and discuss the
+challenges associated with using React in both contexts.
+
+Ans. React can be rendered either on the client side (Client-Side Rendering, CSR) or the server side (Server-Side Rendering, SSR), and each approach has its own advantages, disadvantages, and use cases.
+
+1.  Client-Side Rendering (CSR)
+How CSR Works:
+
+The initial HTML page served to the user is mostly empty, with a JavaScript bundle included.
+After the page loads, the JavaScript runs in the browser, fetching data and dynamically rendering the content.
+The rendering of the entire app happens on the client (browser).
+
+Advantages of CSR:
+* Better User Experience (After Initial Load): Once the initial page is loaded, navigating between different views is faster since only parts of the page are updated, avoiding full-page reloads.
+
+* Rich Interactivity: CSR excels in delivering highly interactive experiences like dashboards, social media feeds, or real-time updates, where users expect instant feedback from their interactions.
+
+* Development Simplicity: CSR follows a straightforward approach where the entire logic resides in the frontend, making the development cycle smoother and easier to manage in many cases.
+
+Disadvantages of CSR:
+* Slower First Page Load: The user sees a blank or skeleton screen until the JavaScript has been downloaded, parsed, and executed. This can hurt performance, especially on slow connections or older devices.
+
+* SEO Challenges: Since the content is rendered dynamically, search engine bots might not fully index the content, potentially hurting SEO, especially for pages requiring indexing (e.g., blogs, e-commerce listings).
+
+Example code:
+<!-- import React from 'react';
+
+export async function getServerSideProps() {
+  const res = await fetch('https://api.example.com/data');
+  const data = await res.json();
+
+  return { props: { data } };
+}
+
+export default function Page({ data }) {
+  return <div>{data.title}</div>;
+} -->
+
+
+---->Some challenges------->
+
+Challlenges in CSR--->>>
+1. Poor SEO: While Google is capable of crawling JavaScript-heavy applications, other search engines may not index client-rendered content as effectively, which can limit search visibility.
+
+2. Initial Load Time: CSR requires the browser to download and execute the entire JavaScript bundle before rendering any content, leading to slower first-page load and reduced performance on low-powered devices.
+
+3. Handling Large JavaScript Bundles: In CSR, the browser must handle large amounts of JavaScript, which can slow down the overall performance, particularly for complex apps.
+
+
+***Challenges in SSR:--->>>>>
+Increased Server Load: Server-side rendering can increase the load on the server, particularly for large or high-traffic websites, which can lead to scaling challenges.
+
+Latency and Network Dependency: Each request involves generating HTML on the server, which can introduce latency, especially for users far from the server or when network conditions are poor.
